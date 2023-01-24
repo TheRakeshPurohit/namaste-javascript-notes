@@ -58,8 +58,6 @@
 
 #### [Episode 19 : map, filter & reduce](./notes/lecture-19.md)
 
-<br>
-
 ## 🤝 Contribution Guidelines
 
 - Fork the repository to your own Github account
