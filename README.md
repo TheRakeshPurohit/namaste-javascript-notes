@@ -60,13 +60,6 @@
 
 <br>
 
-## 👤 Author
-
-**alok raj (alokr417@gmail.com)**
-
-- website: https://bit.do/alok722
-- linkedin: [@alok722](https://linkedin.com/in/alok722)
-
 <br>
 
 ## 🤝 Contribution Guidelines
