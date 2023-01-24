@@ -8,11 +8,11 @@
         setTimeout(function() {
             console.log(i);
         }, 3000);
-        console.log("Namaste Javascript");
+        console.log("Hello Javascript");
     }
     x();
     // Output:
-    // Namaste Javascript
+    // Hello Javascript
     // 1 // after waiting 3 seconds
     ```
     * We expect JS to wait 3 sec, print 1 and then go down and print the string. But JS prints string immediately, waits 3 sec and then prints 1.
@@ -30,11 +30,11 @@
         console.log(i);
         }, i*1000);
         }
-        console.log("Namaste Javascript");
+        console.log("Hello Javascript");
     }
     x();
     // Output:
-    // Namaste Javascript
+    // Hello Javascript
     // 6
     // 6
     // 6
@@ -59,14 +59,7 @@
             }
             close(i); // everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!
             }
-            console.log("Namaste Javascript");
+            console.log("Hello Javascript");
         }
         x();
         ```
- 
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=eBTBG4nda2A&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/eBTBG4nda2A/0.jpg" width="750"
-alt="setTimeout + Closures Interview Question in JS Youtube Link"/></a>

@@ -1,11 +1,10 @@
-## title: Namaste JavaScript
+## title: Hello JavaScript
 
 <br>
 
 # Episode 1 : Execution Context
 
 - Everything in JS happens inside the execution context. Imagine a sealed-off container inside which JS runs. It is an abstract concept that hold info about the env. within the current code is being executed.
-  ![Execution Context](../assets/execution-context.jpg "Execution Context")
 
 - In the container the first component is **memory component** and the 2nd one is **code component**
 
@@ -16,13 +15,6 @@
 - JS is a **synchronous**, **single-threaded** language
   - Synchronous:- One command at a time.
   - Single-threaded:- In a specific synchronous order.
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=ZvbzSrg0afE&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP" target="_blank"><img src="https://img.youtube.com/vi/ZvbzSrg0afE/0.jpg" width="750"
-alt="Execution Context Youtube Link"/></a>
 
 <br>
 
@@ -53,34 +45,19 @@ var square4 = square(4);
 
 The very **first** thing which JS does is **memory creation phase**, so it goes to line one of above code snippet, and **allocates a memory space** for variable **'n'** and then goes to line two, and **allocates a memory space** for **function 'square'**. When allocating memory **for n it stores 'undefined'**, a special value for 'n'. **For 'square', it stores the whole code of the function inside its memory space.** Then, as square2 and square4 are variables as well, it allocates memory and stores 'undefined' for them, and this is the end of first phase i.e. memory creation phase.
 
-So O/P will look something like
-
-![Execution Context Phase 1](../assets/phase1.jpg "Execution Context")
-
 Now, in **2nd phase** i.e. code execution phase, it starts going through the whole code line by line. As it encounters var n = 2, it assigns 2 to 'n'. Until now, the value of 'n' was undefined. For function, there is nothing to execute. As these lines were already dealt with in memory creation phase.
 
 Coming to line 6 i.e. **var square2 = square(n)**, here **functions are a bit different than any other language. A new execution context is created altogether.** Again in this new execution context, in memory creation phase, we allocate memory to num and ans the two variables. And undefined is placed in them. Now, in code execution phase of this execution context, first 2 is assigned to num. Then var ans = num \* num will store 4 in ans. After that, return ans returns the control of program back to where this function was invoked from.
 
-![Execution Context Phase 2](../assets/phase2.jpg "Execution Context")
-
 When **return** keyword is encountered, It returns the control to the called line and also **the function execution context is deleted**.
 Same thing will be repeated for square4 and then after that is finished, the global execution context will be destroyed.
 So the **final diagram** before deletion would look something like:
-
-![Execution Context Phase 2](../assets/final_execution_context.jpg "Execution Context")
 
 - Javascript manages code execution context creation and deletion with the the help of **Call Stack**.
 
 - Call Stack is a mechanism to keep track of its place in script that calls multiple function.
 
 - Call Stack maintains the order of execution of execution contexts. It is also known as Program Stack, Control Stack, Runtime stack, Machine Stack, Execution context stack.
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=iLWTnMzWtj4&t=1s&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/iLWTnMzWtj4/0.jpg" width="750"
-alt="How JS is executed & Call Stack Youtube Link"/></a>
 
 <br>
 
@@ -93,11 +70,11 @@ alt="How JS is executed & Call Stack Youtube Link"/></a>
 - Let's observe the below code and it's explaination:
 
 ```js
-getName(); // Namaste Javascript
+getName(); // Hello Javascript
 console.log(x); // undefined
 var x = 7;
 function getName() {
-  console.log("Namaste Javascript");
+  console.log("Hello Javascript");
 }
 ```
 
@@ -108,11 +85,11 @@ function getName() {
 - So in previous lecture, we learnt that execution context gets created in two phase, so even before code execution, memory is created so in case of variable, it will be initialized as undefined while in case of function the whole function code is placed in the memory. Example:
 
 ```js
-getName(); // Namaste JavaScript
+getName(); // Hello JavaScript
 console.log(x); // Uncaught Reference: x is not defined.
-console.log(getName); // f getName(){ console.log("Namaste JavaScript); }
+console.log(getName); // f getName(){ console.log("Hello JavaScript); }
 function getName() {
-  console.log("Namaste JavaScript");
+  console.log("Hello JavaScript");
 }
 ```
 
@@ -122,17 +99,10 @@ function getName() {
 getName(); // Uncaught TypeError: getName is not a function
 console.log(getName);
 var getName = function () {
-  console.log("Namaste JavaScript");
+  console.log("Hello JavaScript");
 };
 // The code won't execute as the first line itself throws an TypeError.
 ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=Fnlnw8uY6jo&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/Fnlnw8uY6jo/0.jpg" width="750"
-alt="Hoisting Youtube Link"/></a>
 
 <br>
 
@@ -191,14 +161,7 @@ Outputs:
 
 - reference:
 
-![Execution Context Phase 1](../assets/function.jpg "Execution Context")
-
 <hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=gSDncyuGw0s&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/gSDncyuGw0s/0.jpg" width="750"
-alt="Functions and Variable Environments Youtube Link"/></a>
 
 <br>
 
@@ -224,13 +187,6 @@ console.log(x); // 10
 console.log(this.x); // 10
 console.log(window.x); // 10
 ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=QCRpVw2KXf8&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/QCRpVw2KXf8/0.jpg" width="750"
-alt="Shortest JS Program, window & this keyword Youtube Link"/></a>
 
 <br>
 
@@ -259,13 +215,6 @@ console.log(a); // Uncaught ReferenceError: a is not defined
 
 - JS is a **loosely typed / weakly typed** language. It doesn't attach variables to any datatype. We can say _var a = 5_, and then change the value to boolean _a = true_ or string _a = 'hello'_ later on.
 - **Never** assign _undefined_ to a variable manually. Let it happen on it's own accord.
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=B7iF6G3EyIk&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/B7iF6G3EyIk/0.jpg" width="750"
-alt="undefined vs not defined in JS Youtube Link"/></a>
 
 <br>
 
@@ -340,8 +289,6 @@ console.log(b); // Error, Not Defined
     a() = [b:10, c:{}, [lexical environment pointer pointing to GEC]]
     GEC =  [a:{},[lexical_environment pointer pointing to null]]
     ```
-    ![Lexical Scope Explaination](../assets/lexical.jpg "Lexical Scope")
-    ![Lexical Scope Explaination](../assets/lexical2.jpg "Lexical Scope")
 
 <br>
 
@@ -374,13 +321,6 @@ console.log(b); // Error, Not Defined
   ```
 
 - **TLDR**; An inner function can access variables which are in outer functions even if inner function is nested deep. In any other case, a function can't access variables not in its scope.
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=uH-tVP8MUs8&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/uH-tVP8MUs8/0.jpg" width="750"
-alt="The Scope Chain, Scope & Lexical Environment Youtube Link"/></a>
 
 <br>
 
@@ -467,13 +407,6 @@ b = 1000; //this gives us TypeError: Assignment to constant variable.
 - If not, use let, Avoid var.
 - Declare and initialize all variables with let to the top to avoid errors to shrink temporal dead zone window to zero.
 
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=BNC6slYCj50&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/BNC6slYCj50/0.jpg" width="750"
-alt="let & const in JS, Temporal Dead Zone Youtube Link"/></a>
-
 <br>
 
 <hr>
@@ -544,8 +477,6 @@ let b = 100;
 console.log(b); // 100, Both b's are in separate spaces (one in Block(20) and one in Script(another arbitrary mem space)(100)). Same is also true for *const* declarations.
 ```
 
-![Block Scope Explaination](../assets/scope.jpg "Lexical Scope")
-
 - Same logic is true even for **functions**
 
 ```js
@@ -578,13 +509,6 @@ function x() {
   var a = 20;
 }
 ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=lW_erSjyMeM&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/lW_erSjyMeM/0.jpg" width="750"
-alt="Block Scope & Shadowing in JS Youtube Link"/></a>
 
 <br>
 
@@ -633,8 +557,6 @@ alt="Block Scope & Shadowing in JS Youtube Link"/></a>
 
 <br>
 
-- ![Closure Explaination](../assets/closure.jpg "Lexical Scope")
-
 - Advantages of Closure:
 
   - Module Design Pattern
@@ -647,13 +569,6 @@ alt="Block Scope & Shadowing in JS Youtube Link"/></a>
   - Over consumption of memory
   - Memory Leak
   - Freeze browser
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=qikxEIxsXco&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/qikxEIxsXco/0.jpg" width="750"
-alt="Closure in JS Youtube Link"/></a>
 
 <br>
 
@@ -671,11 +586,11 @@ function x() {
   setTimeout(function () {
     console.log(i);
   }, 3000);
-  console.log("Namaste Javascript");
+  console.log("Hello Javascript");
 }
 x();
 // Output:
-// Namaste Javascript
+// Hello Javascript
 // 1 // after waiting 3 seconds
 ```
 
@@ -695,11 +610,11 @@ x();
         console.log(i);
       }, i * 1000);
     }
-    console.log("Namaste Javascript");
+    console.log("Hello Javascript");
   }
   x();
   // Output:
-  // Namaste Javascript
+  // Hello Javascript
   // 6
   // 6
   // 6
@@ -726,19 +641,10 @@ x();
         }
         close(i); // everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!
       }
-      console.log("Namaste Javascript");
+      console.log("Hello Javascript");
     }
     x();
     ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=eBTBG4nda2A&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/eBTBG4nda2A/0.jpg" width="750"
-alt="setTimeout + Closures Interview Question in JS Youtube Link"/></a>
-
-<br>
 
 <hr>
 
@@ -940,15 +846,6 @@ y();
 
 <hr>
 
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=t1nFAMws5FI&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/t1nFAMws5FI/0.jpg" width="750"
-alt="Closures Interview Question in JS Youtube Link"/></a>
-
-<br>
-
-<hr>
-
 <br>
 
 # Episode 13 : First Class Functions ft. Anonymous Functions
@@ -1058,13 +955,6 @@ var b = function (param1) {
 console.log(b()); //we log the entire fun within b.
 ```
 
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=SHINoHxvTso&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/SHINoHxvTso/0.jpg" width="750"
-alt="First Class Functions ft. Anonymous Functions in JS Youtube Link"/></a>
-
 <br>
 
 <hr>
@@ -1160,18 +1050,10 @@ document.getElementById("clickMe").addEventListener("click", function xyz() {
     }
     attachEventList();
     ```
-    ![Event Listerner Demo](../assets/event.jpg)
 
 ### Garbage Collection and removeEventListeners
 
 - Event listeners are heavy as they form closures. So even when call stack is empty, EventListener won't free up memory allocated to count as it doesn't know when it may need count again. So we remove event listeners when we don't need them (garbage collected) onClick, onHover, onScroll all in a page can slow it down heavily.
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=btj35dh3_U8&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/btj35dh3_U8/0.jpg" width="750"
-alt="Callback Functions in JS ft. Event Listeners in JS Youtube Link"/></a>
 
 <br>
 
@@ -1186,12 +1068,10 @@ alt="Callback Functions in JS ft. Event Listeners in JS Youtube Link"/></a>
 - Browser has JS Engine which has Call Stack which has Global execution context, local execution context etc.
   - But browser has many other superpowers - Local storage space, Timer, place to enter URL, Bluetooth access, Geolocation access and so on.
   - Now JS needs some way to connect the callstack with all these superpowers. This is done using Web APIs.
-    ![Event Loop 1 Demo](../assets/eventloop1.jpg)
 
 ### WebAPIs
 
 None of the below are part of Javascript! These are extra superpowers that browser has. Browser gives access to JS callstack to use these powers.
-![Event Loop 2 Demo](../assets/eventloop2.jpg)
 
 - setTimeout(), DOM APIs, fetch(), localstorage, console (yes, even console.log is not JS!!), location and so many more.
 
@@ -1205,7 +1085,6 @@ None of the below are part of Javascript! These are extra superpowers that brows
   - As window is global obj, and all the above functions are present in global object, we don't explicity write window but it is implied.
 
 - Let's undertand the below code image and its explaination:
-  ![Event Loop 3 Demo](../assets/eventloop3.jpg)
   - ```js
     console.log("start");
     setTimeout(function cb() {
@@ -1228,25 +1107,6 @@ Q: How after 5 secs timer is console?
 - cb() cannot simply directly go to callstack to be execeuted. It goes through the callback queue when timer expires.
 - Event loop keep checking the callback queue, and see if it has any element to puts it into call stack. It is like a gate keeper.
 - Once cb() is in callback queue, eventloop pushes it to callstack to run. Console API is used and log printed
-- ![Event Loop 4 Demo](../assets/eventloop4.jpg)
-
-Q: Another example to understand Eventloop & Callback Queue.
-
-See the below Image and code and try to understand the reason:
-![Event Loop 5 Demo](../assets/eventloop5.jpg)
-Explaination?
-
-- ```js
-  console.log("Start");
-  document.getElementById("btn").addEventListener("click", function cb() {
-    // cb() registered inside webapi environment and event(click) attached to it. i.e. REGISTERING CALLBACK AND ATTACHING EVENT TO IT.
-    console.log("Callback");
-  });
-  console.log("End"); // calls console api and logs in console window. After this GEC get removed from call stack.
-  // In above code, even after console prints "Start" and "End" and pops GEC out, the eventListener stays in webapi env(with hope that user may click it some day) until explicitly removed, or the browser is closed.
-  ```
-
-- Eventloop has just one job to keep checking callback queue and if found something push it to call stack and delete from callback queue.
 
 Q: Need of callback queue?
 
@@ -1280,8 +1140,6 @@ Code Explaination:
 * In console, first Start and End are printed in console. First cbF goes in callstack and "CB Netflix" is printed. cbF popped from callstack. Next cbT is removed from callback Queue, put in Call Stack, "CB Timeout" is printed, and cbT removed from callstack.
 * See below Image for more understanding
 ```
-
-![Event Loop 6 Demo](../assets/eventloop6.jpg)
 Microtask Priority Visualization
 ![Event Loop 7 Demo](../assets/microtask.gif)
 
@@ -1314,13 +1172,6 @@ Microtask Priority Visualization
 ![microtask 5 Demo](../assets/microtask5.gif)
 ![microtask 6 Demo](../assets/microtask6.gif)
 
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=8zKuNo4ay8E&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/8zKuNo4ay8E/0.jpg" width="750"
-alt="Asynchronous JavaScript & EVENT LOOP from scratch in JS Youtube Link"/></a>
-
 <br>
 
 <hr>
@@ -1345,22 +1196,14 @@ alt="Asynchronous JavaScript & EVENT LOOP from scratch in JS Youtube Link"/></a>
 
   1. **Parsing** - Code is broken down into tokens. In "let a = 7" -> let, a, =, 7 are all tokens. Also we have a syntax parser that takes code and converts it into an AST (Abstract Syntax Tree) which is a JSON with all key values like type, start, end, body etc (looks like package.json but for a line of code in JS. Kinda unimportant)(Check out astexplorer.net -> converts line of code into AST).
   2. **Compilation** - JS has something called Just-in-time(JIT) Compilation - uses both interpreter & compiler. Also compilation and execution both go hand in hand. The AST from previous step goes to interpreter which converts hi-level code to byte code and moves to execeution. While interpreting, compiler also works hand in hand to compile and form optimized code during runtime. **Does JavaScript really Compiles?** The answer is a loud **YES**. More info at: [Link 1](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch1.md#whats-in-an-interpretation), [Link 2](https://web.stanford.edu/class/cs98si/slides/overview.html), [Link 3](https://blog.greenroots.info/javascript-interpreted-or-compiled-the-debate-is-over-ckb092cv302mtl6s17t14hq1j). JS used to be only interpreter in old times, but now has both to compile and interpreter code and this make JS a JIT compiled language, its like best of both world.
-  3. **Execution** - Needs 2 components ie. Memory heap(place where all memory is stored) and Call Stack(same call stack from prev episodes). There is also a garbage collector. It uses an algo called **Mark and Sweep**.
-     ![JS Engine Demo](../assets/jsengine.jpg)
+  3. **Execution** - Needs 2 components ie. Memory heap(place where all memory is stored) and Call Stack(same call stack from prev episodes). There is also a garbage collector. It uses an algo called **Mark and Sweep**.  
      GiF Demo
      ![JS Engine Demo](../assets/jsenginegif.gif)
 
 - Companies use different JS engines and each try to make theirs the best.
   - v8 of Google has Interpreter called Ignition, a compiler called Turbo Fan and garbage collector called Orinoco
   - v8 architecture:
-    ![JS Engine Demo](../assets/jsengine.png)
 
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=2WJL19wDH68&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/2WJL19wDH68/0.jpg" width="750"
-alt="JS Engine Exposed, Google's V8 Architecture in JS Youtube Link"/></a>
 
 <br>
 
@@ -1399,7 +1242,6 @@ alt="JS Engine Exposed, Google's V8 Architecture in JS Youtube Link"/></a>
 - The First rule of JavaScript: Do not **block the main thread** (as JS is a single threaded(only 1 callstack) language).
 
 - In below example, we are blocking the main thread. Observe Questiona and Output.
-  ![setTimeout Demo](../assets/settimeout1.jpg)
 
 - setTimeout guarantees that it will take at least the given timer to execute the code.
 
@@ -1416,13 +1258,6 @@ alt="JS Engine Exposed, Google's V8 Architecture in JS Youtube Link"/></a>
   // O/p - Start End Callback
   // This method of putting timer = 0, can be used to defer a less imp function by a little so the more important function(here printing "End") can take place
   ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=nqsPmuicJJc&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/nqsPmuicJJc/0.jpg" width="750"
-alt="Trust issues with setTimeout() in JS Youtube Link"/></a>
 
 <br>
 
@@ -1522,13 +1357,6 @@ Array.prototype.calculate = function(operation) {
 }
 console.log(radiusArr.calculate(area))
 ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=HkWxvB1RJq0&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/HkWxvB1RJq0/0.jpg" width="750"
-alt="Higher-Order Functions ft. Functional Programming in JS Youtube Link"/></a>
 
 <br>
 
@@ -1722,13 +1550,6 @@ const output = users.reduce((acc, curr) => {
 console.log(output); // ["Alok", "Ashish", "Ankit"]
 ```
 
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=zdp0zrpKzIE&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP" target="_blank"><img src="https://img.youtube.com/vi/zdp0zrpKzIE/0.jpg" width="750"
-alt="map, filter & reduce Youtube Link"/></a>
-
 <br>
 
 <hr>
@@ -1749,10 +1570,10 @@ alt="map, filter & reduce Youtube Link"/></a>
 > 💡 JavaScript is synchronous, single threaded language. It can Just do one thing at a time, it has just one call-stack and it can execute one thing at a time. Whatever code we give to Javascript will be quickly executed by Javascript engine, it does not wait.
 
 ```js
-console.log("Namaste");
+console.log("Hello");
 console.log("JavaScript");
 console.log("Season 2");
-// Namaste
+// Hello
 // JavaScript
 // Season 2
 
@@ -1762,12 +1583,12 @@ console.log("Season 2");
 _But what if we have to delay execution of any line, we could utilize callback, How?_
 
 ```js
-console.log("Namaste");
+console.log("Hello");
 setTimeout(function () {
   console.log("JavaScript");
 }, 5000);
 console.log("Season 2");
-// Namaste
+// Hello
 // Season 2
 // JavaScript
 
@@ -1850,11 +1671,6 @@ api.createOrder(cart, function () {
 > 💡 Async programming in JavaScript exists because callback exits.
 
 more at `http://callbackhell.com/`
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=yEKtJGha3yM&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX" target="_blank"><img src="https://img.youtube.com/vi/yEKtJGha3yM/0.jpg" width="750"
-alt="map, filter & reduce Youtube Link"/></a>
 
 <br>
 
@@ -2038,13 +1854,6 @@ createOrder(cart)
 
 // To improve readability you can use arrow function instead of regular function
 ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=ap-6PPAuK1Y&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&index=3&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/ap-6PPAuK1Y/0.jpg" width="750"
-alt="promise in Javascript Youtube Link"/></a>
 
 <br>
 
@@ -2244,12 +2053,5 @@ createOrder(cart)
     console.log(paymentInfo);
   })
 ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=U74BJcr8NeQ&list=PLlasXeu85E9eWOpw9jxHOQyGMRiBZ60aX&index=4&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/U74BJcr8NeQ/0.jpg" width="750"
-alt="promise in Javascript Youtube Link"/></a>
 
 To Be Continued...

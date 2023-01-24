@@ -2,11 +2,11 @@
 
 * Let's observe the below code and it's explaination:
 ```js
-getName(); // Namaste Javascript
+getName(); // Hello Javascript
 console.log(x); // undefined
 var x = 7;
 function getName() {
- console.log("Namaste Javascript");
+ console.log("Hello Javascript");
 }
 ```
 
@@ -17,11 +17,11 @@ function getName() {
 * So in previous lecture, we learnt that execution context gets created in two phase, so even before code execution, memory is created so in case of variable, it will be initialized as undefined while in case of function the whole function code is placed in the memory. Example:
 
 ```js
-getName(); // Namaste JavaScript
+getName(); // Hello JavaScript
 console.log(x); // Uncaught Reference: x is not defined.
-console.log(getName); // f getName(){ console.log("Namaste JavaScript); }
+console.log(getName); // f getName(){ console.log("Hello JavaScript); }
 function getName(){
-    console.log("Namaste JavaScript");
+    console.log("Hello JavaScript");
 }
 ```
 
@@ -30,14 +30,7 @@ function getName(){
 getName(); // Uncaught TypeError: getName is not a function
 console.log(getName);
 var getName = function () {
-    console.log("Namaste JavaScript");
+    console.log("Hello JavaScript");
 }
 // The code won't execute as the first line itself throws an TypeError.
 ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=Fnlnw8uY6jo&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/Fnlnw8uY6jo/0.jpg" width="750"
-alt="Hoisting Youtube Link"/></a>

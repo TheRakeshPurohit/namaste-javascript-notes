@@ -27,7 +27,6 @@
 * The First rule of JavaScript: Do not **block the main thread** (as JS is a single threaded(only 1 callstack) language).
 
 * In below example, we are blocking the main thread. Observe Questiona and Output.
-![setTimeout Demo](../assets/settimeout1.jpg)
 
 * setTimeout guarantees that it will take at least the given timer to execute the code.
 
@@ -44,10 +43,3 @@
     // O/p - Start End Callback
     // This method of putting timer = 0, can be used to defer a less imp function by a little so the more important function(here printing "End") can take place
     ```
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=nqsPmuicJJc&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/nqsPmuicJJc/0.jpg" width="750"
-alt="Trust issues with setTimeout() in JS Youtube Link"/></a>

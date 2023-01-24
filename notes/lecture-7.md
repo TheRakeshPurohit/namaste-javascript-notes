@@ -64,8 +64,6 @@ console.log(b); // Error, Not Defined
     a() = [b:10, c:{}, [lexical environment pointer pointing to GEC]]
     GEC =  [a:{},[lexical_environment pointer pointing to null]]
     ```
-    ![Lexical Scope Explaination](../assets/lexical.jpg "Lexical Scope")
-    ![Lexical Scope Explaination](../assets/lexical2.jpg "Lexical Scope")
 
 <br>
 
@@ -98,11 +96,3 @@ console.log(b); // Error, Not Defined
 
 
 * **TLDR**; An inner function can access variables which are in outer functions even if inner function is nested deep. In any other case, a function can't access variables not in its scope.
-
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=uH-tVP8MUs8&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/uH-tVP8MUs8/0.jpg" width="750"
-alt="The Scope Chain, Scope & Lexical Environment Youtube Link"/></a>

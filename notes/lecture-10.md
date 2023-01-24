@@ -38,8 +38,6 @@
 
 <br>
 
-* ![Closure Explaination](../assets/closure.jpg "Lexical Scope")
-
 * Advantages of Closure:
   * Module Design Pattern
   * Currying
@@ -51,11 +49,3 @@
   * Over consumption of memory
   * Memory Leak
   * Freeze browser
-
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=qikxEIxsXco&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/qikxEIxsXco/0.jpg" width="750"
-alt="Closure in JS Youtube Link"/></a>

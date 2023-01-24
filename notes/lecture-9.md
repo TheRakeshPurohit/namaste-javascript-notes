@@ -56,7 +56,6 @@ What is **Shadowing**?
     }
     console.log(b); // 100, Both b's are in separate spaces (one in Block(20) and one in Script(another arbitrary mem space)(100)). Same is also true for *const* declarations.
     ```
-    ![Block Scope Explaination](../assets/scope.jpg "Lexical Scope")
 
 
 * Same logic is true even for **functions**
@@ -88,13 +87,3 @@ What is **Illegal Shadowing**?
             var a = 20;
         }
         ```
-
-
-
-
-<hr>
-
-Watch Live On Youtube below:
-
-<a href="https://www.youtube.com/watch?v=lW_erSjyMeM&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/lW_erSjyMeM/0.jpg" width="750"
-alt="Block Scope & Shadowing in JS Youtube Link"/></a>
