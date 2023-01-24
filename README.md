@@ -60,8 +60,6 @@
 
 <br>
 
-<br>
-
 ## 🤝 Contribution Guidelines
 
 - Fork the repository to your own Github account
